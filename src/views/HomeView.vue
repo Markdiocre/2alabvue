@@ -25,17 +25,18 @@
 </script>
 
 <template>
-  <div class="big">
-    <input v-model="username" type="text" placeholder="username" />
-    <input v-model="password" type="password" placeholder="password" />
-  
-    <button @click="sendCreds">Login</button>
+  <div class="h-[100vh] bg-black text-xl text-white">
+    HELLO
+    <div class="form-holder">
+      <input v-model="username" type="text" placeholder="username" />
+      <input v-model="password" type="password" placeholder="password" class="password" />
+    
+      <button @click="sendCreds" >LOGIN</button>
+    </div>    
   </div>
+
 </template>
 
 <style scoped>
-.big{
-  font-size: 60px;
-}
 
 </style>
