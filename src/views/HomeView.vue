@@ -25,13 +25,12 @@
 </script>
 
 <template>
-  <div class="h-[100vh] bg-black text-xl text-white">
-    HELLO
-    <div class="form-holder">
-      <input v-model="username" type="text" placeholder="username" />
-      <input v-model="password" type="password" placeholder="password" class="password" />
+  <div class="h-[100vh] w-full flex justify-center items-center bg-[#40548E]">
+    <div class="m-5 rounded-lg flex items-center justify-center flex-col p-8 bg-[#BBB4C2] w-full md:w-fit">
+      <input v-model="username" type="text" placeholder="username" class="bg-[#354E71] p-4"/>
+      <input v-model="password" type="password" placeholder="password" class="mt-2 bg-[#354E71] p-4" />
     
-      <button @click="sendCreds" >LOGIN</button>
+      <button @click="sendCreds"class="mt-2 bg-yellow-400 w-full p-2 hover:bg-green-400">LOGIN</button>
     </div>    
   </div>
 
