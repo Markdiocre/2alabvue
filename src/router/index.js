@@ -9,7 +9,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/auth',
       name: 'home',
       component: HomeView
     },
@@ -34,6 +34,11 @@ const router = createRouter({
       component: InsertView
     },
   ]
+})
+
+router.beforeEach((to, from) => {
+  if(!localStorage.getItem('token') && to.path.includes('about')) return router.replace('/')
+  if(localStorage.getItem('token') && to.path.includes('auth')) return router.replace('/about')
 })
 
 export default router

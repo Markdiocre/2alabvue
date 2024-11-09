@@ -10,14 +10,16 @@
   let password = ref('')
 
   function sendCreds(){
-    axios.post('http://localhost:3000/auth/login/',{
+    axios.post('http://localhost/new_api/login/',{
       username: username.value,
       password: password.value
     }).then((val)=>{
-      alert(val.data.message)
-      router.push({name: 'about'})
+      alert(val.data.status.message)
+      localStorage.setItem('token', val.data.payload.token)
+      
+      router.replace({name: 'about'})
     }).catch((err)=>{
-      alert(err.response.data.message)
+      alert(err.response.status.message)
     })
   }
 
@@ -33,7 +35,6 @@
       <button @click="sendCreds"class="mt-2 bg-yellow-400 w-full p-2 hover:bg-green-400">LOGIN</button>
     </div>    
   </div>
-
 </template>
 
 <style scoped>
